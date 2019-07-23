@@ -1,0 +1,17 @@
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+html{
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+h1{
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+}
+p{
+    margin: 0;
+}

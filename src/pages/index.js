@@ -1,9 +1,11 @@
 import React from "react"
 import { Welcome } from '../components/landing'
+import {Layout} from "../components/common/Layout/index"
 
 export default () => (
-  <main>
-    <div>Hello world!</div>
-    <Welcome />
-  </main>
+  <Layout>
+    <main>
+      <Welcome />
+    </main>
+  </Layout>
 )
