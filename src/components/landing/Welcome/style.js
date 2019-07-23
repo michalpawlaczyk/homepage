@@ -6,6 +6,8 @@ export const Title = styled.div`
   min-width: 50%;
   margin-left: 5vw;
   font-size: 50px;
+  z-index: 1;
+  
 `
 
 export const ImageWrapper = styled.div`
@@ -19,6 +21,7 @@ export const Section = styled.section`
   display: flex;
   overflow: hidden;
   justify-content: space-between;
-  max-height: 100vh;
+  min-height: 100vh;
   align-items: center;
+  position: relative;
 `
