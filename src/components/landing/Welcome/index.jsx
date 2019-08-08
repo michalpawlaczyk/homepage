@@ -1,12 +1,12 @@
 import React from 'react'
-import {Title, Section, ImageWrapper} from './style'
+import {Title, Section, H1, Img} from './style'
+import code from '../../../../static/webdev3.svg'
 
 export const Welcome = () => (
   <Section>
     <Title>
-        <h1>Hello!</h1>
-        <p>I'm Michal and I'm frontend developer!</p>
+        <H1 >Hey there! 👋 I’m Michał and I’m aspiring to frontend developer</H1>
     </Title>
-    <ImageWrapper/>
+    <Img src={code}/>
   </Section>
 )

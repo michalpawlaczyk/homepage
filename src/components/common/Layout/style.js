@@ -1,18 +1,33 @@
-import {createGlobalStyle} from "styled-components"
+import { createGlobalStyle, keyframes } from "styled-components"
 import styled from 'styled-components'
 import './normalize.css'
 import './style.css'
+
+const opacity0to100 = keyframes`
+  0%{
+  opacity: 0;
+  }
+  100%{
+  opacity: 1;
+  }
+`
 
 export const Global = createGlobalStyle`
   
 `
 export const Nav = styled.nav`
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
   z-index: 2;
-  margin: 15px 0;
+  margin:  30px 0;
+  animation: ${opacity0to100} 1.5s alternate;
+
 `
 
 export const Ul = styled.ul`
@@ -31,8 +46,8 @@ export const A = styled.a`
     font-size: 20px;
     text-decoration: none;
     padding: 7px 15px;
-    color: lightcoral;
-    border: lightcoral 1.4px solid;
+    color: #353238;
+    border: #353238 1.4px solid;
     border-radius: 15px;
     transition: color 0.3s linear ;
     
@@ -47,7 +62,7 @@ export const A = styled.a`
     border-radius: 15px;
     width: 70%;
     height: 100%;
-    background-color: lightcoral;
+    background-color: #353238;
     transform: translateY(45px);
     transition: transform .2s linear;
     }
