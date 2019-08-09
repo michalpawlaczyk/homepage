@@ -7,6 +7,6 @@ export const Welcome = () => (
     <Title>
         <H1 >Hey there! 👋 I’m Michał and I’m aspiring to frontend developer</H1>
     </Title>
-    <Img src={code}/>
+    <Img src={code} alt={'web developer.'}/>
   </Section>
 )

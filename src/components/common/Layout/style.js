@@ -27,7 +27,9 @@ export const Nav = styled.nav`
   z-index: 2;
   margin:  30px 0;
   animation: ${opacity0to100} 1.5s alternate;
-
+  @media(max-width: 600px){
+  display: none;
+  }
 `
 
 export const Ul = styled.ul`
