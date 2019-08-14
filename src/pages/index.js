@@ -1,5 +1,5 @@
 import React from "react"
-import { Welcome, Skills, Projects } from '../components/landing'
+import { Welcome, Skills, Projects, Contact } from '../components/landing'
 import {Layout} from "../components/common/Layout/index"
 
 export default () => (
@@ -8,6 +8,7 @@ export default () => (
       <Welcome />
       <Skills/>
       <Projects/>
+      <Contact/>
     </main>
   </Layout>
 )
