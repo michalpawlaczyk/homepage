@@ -39,6 +39,7 @@ export const Title = styled.div`
 export const H1 = styled.h1`
   font-size: 3.125rem;
   font-weight: 300;
+  letter-spacing: 1px;
 `;
 
 export const Img = styled.img`
