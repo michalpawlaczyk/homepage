@@ -40,15 +40,17 @@ export const H1 = styled.h1`
   font-size: 3.125rem;
   font-weight: 300;
   letter-spacing: 1px;
+  position: relative;
 `;
 
 export const Img = styled.img`
   z-index: -1;
-  position: absolute;
-  top: 40vh;
-  right: -28%;
+  //position: absolute;
+  //top: 50vh;
+  //right: -28%;
   max-width: 190%;
   animation: ${slideFromLeft} .8s alternate linear;
+  transform: translate(-28%, -18%);
   ${media.greaterThan("small")`
         
   `}
