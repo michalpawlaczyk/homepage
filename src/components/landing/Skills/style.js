@@ -14,15 +14,32 @@ export const H2 = styled.h2`
     width: 90vw;
     height: 2px;
   }
+  
+  ${media.greaterThan("small")`
+      font-size: 3rem; 
+   `}
 `;
 export const H3 = styled.h3`
   font-size: 2rem;
   font-weight: 300;
   margin: 0 0 0 0.3em;
+  ${media.greaterThan("small")`
+      font-size: 2.4rem; 
+   `}
 `;
 
 export const Li = styled.li`
   font-weight: 200;
   font-size: 1.375rem;
   margin-bottom: 0.2em;
+  ${media.greaterThan("small")`
+      font-size: 1.6rem; 
+   `}
+`;
+
+export const Ul = styled.ul`
+    ${media.greaterThan("small")`
+    margin-left: 3vw;
+    column-count: 2;
+    `}
 `;
