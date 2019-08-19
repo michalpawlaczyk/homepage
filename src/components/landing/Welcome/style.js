@@ -31,7 +31,7 @@ export const Title = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 53%;
+  max-width: 63%;
   `}
   
 `;
@@ -41,31 +41,30 @@ export const H1 = styled.h1`
   font-weight: 300;
   letter-spacing: 1px;
   position: relative;
+  ${media.greaterThan("small")`
+      font-size: 3.8rem;
+  `}
 `;
 
 export const Img = styled.img`
   z-index: -1;
-  //position: absolute;
-  //top: 50vh;
-  //right: -28%;
   max-width: 190%;
   animation: ${slideFromLeft} .8s alternate linear;
-  transform: translate(-28%, -18%);
+  transform: translate(-28%, -16%);
   ${media.greaterThan("small")`
-        
+     transform: translate(-10%, -16%);
   `}
-  
+  ${media.greaterThan("small")`
+     transform: translate(-10%, -16%);
+   `}
 `
 
 export const Section = styled.section`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr .1fr;
-  grid-template-areas: 'title'
-    'image';
   overflow: hidden;
-  min-height: 100vh;
+  //min-height: 100vh;
   position: relative;
   margin-top: 8vh;
-  
+  ${media.greaterThan("small")`
+     margin-top: 12vh;
+     `}
 `;
