@@ -14,12 +14,19 @@ export const H2 = styled.h2`
   font-weight: 300;
   text-align: center;
   padding-top: 0.6em;
+  
+  ${media.greaterThan("small")`
+      font-size: 3rem; 
+   `}
 `;
 
 export const P = styled.p`
   font-weight: 200;
   font-size: 1.25rem;
-  margin: 0 1em;
+  margin: 0 1em .5em;
+  ${media.greaterThan("small")`
+      font-size: 1.5rem; 
+   `}
 `;
 
 export const IconWrapper = styled.div`
@@ -30,6 +37,9 @@ export const IconWrapper = styled.div`
 
 export const Icon = styled.img`
   width: 60px;
+  ${media.greaterThan("small")`
+      width: 80px; 
+   `}
 `;
 
 export const Email = styled.a`
@@ -40,6 +50,9 @@ export const Email = styled.a`
   font-size: 1.3rem;
   margin: .8em 0;
   text-decoration: none;
+  ${media.greaterThan("small")`
+      font-size: 1.5rem; 
+   `}
 `;
 
 export const EmailWrapper = styled.span`
