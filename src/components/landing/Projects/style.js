@@ -16,16 +16,26 @@ export const H2 = styled.h2`
     width: 90vw;
     height: 2px;
   }
+  
+  ${media.greaterThan("small")`
+      font-size: 3rem; 
+   `}
 `;
 
 export const H4 = styled.h4`
   font-size: 1.25rem;
   margin-left: 0.5em;
+  ${media.greaterThan("small")`
+      font-size: 1.4rem; 
+   `}
 `;
 
 export const P = styled.p`
   font-size: 1.125rem;
   margin: 0 0 0.6em 0.6em;
+  ${media.greaterThan("small")`
+      font-size: 1.25rem; 
+   `}
 `;
 
 export const ProjectSection = styled.section`
@@ -55,6 +65,10 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  ${media.greaterThan("small")`
+      font-size: 1.25rem; 
+   `}
 `;
 
 export const A = styled.a`
