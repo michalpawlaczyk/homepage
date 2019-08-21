@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
+import customMedia from "../../common/Responsibility/responsibility"
 
 const slideFromLeft = keyframes`
   0%{
@@ -42,7 +43,7 @@ export const H1 = styled.h1`
   ${media.greaterThan("small")`
       font-size: 3.8rem;
   `}
-  ${media.greaterThan("medium")`
+  ${customMedia.greaterThan("medium")`
    `}
 `
 
@@ -54,8 +55,8 @@ export const Img = styled.img`
   ${media.greaterThan("small")`
      transform: translate(-10%, -16%);
   `}
-  ${media.greaterThan("medium")`
-
+  ${customMedia.greaterThan("medium")`
+      transform: translate(6%, -10%) scale(1.2);
    `}
 `
 
