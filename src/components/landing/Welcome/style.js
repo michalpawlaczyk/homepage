@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-import media from "styled-media-query";
+import styled, { keyframes } from "styled-components"
+import media from "styled-media-query"
 
 const slideFromLeft = keyframes`
   0%{
@@ -20,21 +20,19 @@ const opacity0to100 = keyframes`
 `
 
 export const Title = styled.div`
-  
   color: #353238;
   margin-left: 5vw;
   z-index: 1;
   animation: ${opacity0to100} 2s alternate;
   position: relative;
-  
+
   ${media.greaterThan("small")`
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 63%;
   `}
-  
-`;
+`
 
 export const H1 = styled.h1`
   font-size: 3.125rem;
@@ -44,18 +42,20 @@ export const H1 = styled.h1`
   ${media.greaterThan("small")`
       font-size: 3.8rem;
   `}
-`;
+  ${media.greaterThan("medium")`
+   `}
+`
 
 export const Img = styled.img`
   z-index: -1;
   max-width: 190%;
-  animation: ${slideFromLeft} .8s alternate linear;
+  animation: ${slideFromLeft} 0.8s alternate linear;
   transform: translate(-28%, -16%);
   ${media.greaterThan("small")`
      transform: translate(-10%, -16%);
   `}
-  ${media.greaterThan("small")`
-     transform: translate(-10%, -16%);
+  ${media.greaterThan("medium")`
+
    `}
 `
 
@@ -67,4 +67,4 @@ export const Section = styled.section`
   ${media.greaterThan("small")`
      margin-top: 12vh;
      `}
-`;
+`
