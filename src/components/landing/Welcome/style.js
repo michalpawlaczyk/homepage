@@ -44,6 +44,7 @@ export const H1 = styled.h1`
       font-size: 3.8rem;
   `}
   ${customMedia.greaterThan("medium")`
+      font-size: 4rem;
    `}
 `
 
@@ -56,7 +57,7 @@ export const Img = styled.img`
      transform: translate(-10%, -16%);
   `}
   ${customMedia.greaterThan("medium")`
-      transform: translate(6%, -10%) scale(1.2);
+      transform: translate(6%, -10%) scale(1.15);
    `}
 `
 
