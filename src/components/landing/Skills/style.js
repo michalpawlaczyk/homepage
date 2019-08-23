@@ -22,6 +22,11 @@ export const H2 = styled.h2`
   ${customMedia.greaterThan("medium")`
       font-size: 3.3rem; 
    `}
+  ${customMedia.greaterThan("large")`
+      font-size: 3.75rem;
+      text-align: left;
+      margin: 0 0 0.3em 0.7em;
+   `}
 `
 export const H3 = styled.h3`
   font-size: 2rem;
@@ -30,6 +35,9 @@ export const H3 = styled.h3`
   ${media.greaterThan("small")`
       font-size: 2.4rem; 
       margin: 0 0 0 0.9em;
+   `}
+  ${customMedia.greaterThan("large")`
+      margin: 0 0 0 1.8em;
    `}
 `
 
@@ -40,6 +48,9 @@ export const Li = styled.li`
   ${media.greaterThan("small")`
       font-size: 1.6rem;
       margin: 0 0 0.2em 0.8em; 
+   `}
+  ${customMedia.greaterThan("large")`
+      margin: 0 0 0.2em 2.3em;
    `}
 `
 

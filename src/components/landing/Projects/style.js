@@ -24,6 +24,11 @@ export const H2 = styled.h2`
   ${customMedia.greaterThan("medium")`
       font-size: 3.3rem; 
    `}
+   ${customMedia.greaterThan("large")`
+      font-size: 3.75rem;
+      text-align: left;
+      margin: 0 0 0.3em 0.7em;
+   `}
 `
 
 export const H4 = styled.h4`
