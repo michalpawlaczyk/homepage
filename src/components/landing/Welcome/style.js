@@ -88,7 +88,7 @@ export const Img = styled.img`
     transform: translate(-24%, 12%) scale(1.05);
   `}
   ${customMedia.greaterThan("huge")`
-    transform: translate(-20%, -3%) scale(1.2);
+    transform: translate(-20%, 5%) scale(1.2);
   `}
 `
 
