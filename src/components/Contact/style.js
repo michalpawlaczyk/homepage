@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import media from "styled-media-query"
-import customMedia from "../../common/Responsibility/responsibility"
+import { theme } from "../../Theme/mainTheme"
 
 export const Section = styled.section`
   background: #353238;
@@ -16,32 +15,32 @@ export const H2 = styled.h2`
   text-align: center;
   padding-top: 0.6em;
 
-  ${media.greaterThan("small")`
-      font-size: 3rem; 
-   `}
-  ${customMedia.greaterThan("medium")`
-      font-size: 3.3rem; 
-   `}
-   ${customMedia.greaterThan("large")`
-      font-size: 3.75rem;
-      text-align: left;
-      margin: 0 0 0.3em 0.7em;
-   `}
+  @media (min-width: ${theme.small}) {
+    font-size: 3rem;
+  }
+  @media (min-width: ${theme.medium}) {
+    font-size: 3.3rem;
+  }
+  @media (min-width: ${theme.large}) {
+    font-size: 3.75rem;
+    text-align: left;
+    margin: 0 0 0.3em 0.7em;
+  }
 `
 
 export const P = styled.p`
   font-weight: 200;
   font-size: 1.25rem;
   margin: 0 1em 0.5em;
-  ${media.greaterThan("small")`
-      font-size: 1.5rem; 
-   `}
-  ${media.greaterThan("medium")`
-      font-size: 1.6rem; 
-   `}
-  ${customMedia.greaterThan("large")`
-      margin: 0 2em 0.5em;
-   `}
+  @media (min-width: ${theme.small}) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: ${theme.medium}) {
+    font-size: 1.6rem;
+  }
+  @media (min-width: ${theme.small}) {
+    margin: 0 2em 0.5em;
+  }
 `
 
 export const IconWrapper = styled.div`
@@ -53,9 +52,9 @@ export const IconWrapper = styled.div`
 export const Icon = styled.img`
   width: 60px;
   margin-right: 20px;
-  ${media.greaterThan("small")`
-      width: 80px; 
-   `}
+  @media (min-width: ${theme.small}) {
+    width: 80px;
+  }
 `
 
 export const Email = styled.a`
@@ -66,12 +65,12 @@ export const Email = styled.a`
   font-size: 1.3rem;
   margin: 0.8em 0;
   text-decoration: none;
-  ${media.greaterThan("small")`
-      font-size: 1.5rem; 
-   `}
-  ${media.greaterThan("medium")`
-    font-size: 1.6rem; 
-  `}
+  @media (min-width: ${theme.small}) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: ${theme.medium}) {
+    font-size: 1.6rem;
+  }
 `
 
 export const EmailWrapper = styled.span`

@@ -1,37 +1,39 @@
 import React from "react"
-import {
-  Welcome,
-  Skills,
-  Projects,
-  ProjectsDescription,
-  Contact,
-} from "../components/landing"
-import { Layout } from "../components/common/Layout/index"
+import { Welcome } from "../components/Welcome/index"
+import { Skills } from "../components/Skills/index"
+import { Projects } from "../components/Projects/index"
+import { ProjectsDescription } from "../components/Projects/index"
+import { Contact } from "../components/Contact/index"
 import { graphql } from "gatsby"
+import GlobalStyle from "../Theme/GlobalStyle"
 
 export default ({ data }) => {
   return (
-    <Layout>
-      <main>
-        <Welcome />
-        <Skills id="skills" />
-        <Projects id="projects">
-          {data ? (
-            data.github.repositoryOwner.repositories.nodes.map(element => (
-              <ProjectsDescription
-                key={element.name}
-                name={element.name}
-                description={element.description}
-                url={element.url}
-              />
-            ))
-          ) : (
-            <p>Something goes wrong 😨</p>
-          )}
-        </Projects>
-        <Contact id="contact" />
-      </main>
-    </Layout>
+    <main>
+      <GlobalStyle />
+      <Welcome />
+      <Skills id="skills" />
+      <Projects id="projects">
+        {data ? (
+          data.github.repositoryOwner.repositories.nodes.map(element => (
+            <ProjectsDescription
+              key={element.name}
+              name={element.name}
+              description={element.description}
+              url={element.url}
+            />
+          ))
+        ) : (
+          <p>
+            Something goes wrong
+            <span role="img" aria-label="scary">
+              😨
+            </span>
+          </p>
+        )}
+      </Projects>
+      <Contact id="contact" />
+    </main>
   )
 }
 

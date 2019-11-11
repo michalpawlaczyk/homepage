@@ -1,5 +1,5 @@
-import React from 'react'
-import {H2, H3, Li, Ul} from './style'
+import React from "react"
+import { H2, H3, Li, Ul } from "./style"
 
 export const Skills = () => (
   <section>

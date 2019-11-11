@@ -11,7 +11,7 @@ import {
   A,
   ProjectsWrapper,
 } from "./style"
-import GitHubLogo from "../../../../static/GithubIcon.svg"
+import GitHubLogo from "../../static/GithubIcon.svg"
 
 export const Projects = ({ children }) => {
   return (

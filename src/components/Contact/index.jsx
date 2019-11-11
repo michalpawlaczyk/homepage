@@ -1,21 +1,24 @@
 import React from "react"
 import { H2, P, IconWrapper, Section, Icon, Email, EmailWrapper } from "./style"
-import LinkedIn from "../../../../static/LinkedInIcon.svg"
-import Github from "../../../../static/GithubWhiteIcon.svg"
+import LinkedIn from "../../static/LinkedInIcon.svg"
+import Github from "../../static/GithubWhiteIcon.svg"
 
 export const Contact = () => (
   <Section>
     <H2>
-      Contact me <span>😄</span>
+      Contact me{" "}
+      <span role="img" aria-label="smile">
+        😄
+      </span>
     </H2>
     <P>
       I’m open for new opportunities. If you have one for me we should talk!
     </P>
     <IconWrapper>
-      <a href="">
+      <a href="https://pl.linkedin.com/">
         <Icon src={LinkedIn} alt="LinkedIn." />
       </a>
-      <a href="">
+      <a href="https://github.com/">
         <Icon src={Github} alt="Github." />
       </a>
     </IconWrapper>
