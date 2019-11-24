@@ -8,7 +8,26 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "comma-dangle": ["error", "always"]
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always",
+        "objects": "never",
+        "imports": "never",
+        "exports": "always",
+        "functions": "never"
+      }
+    ],
+    "operator-linebreak": ["error", "after"],
+    "implicit-arrow-linebreak": ["error", "never"]
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"]
+  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
 }
