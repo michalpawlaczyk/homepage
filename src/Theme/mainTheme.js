@@ -8,8 +8,8 @@ const theme = {
     s: '1.6rem',
     m: '2.5rem',
     l: '3.3rem',
-    xl: '4rem',
-    xxl: '4.5rem',
+    xl: '3.7rem',
+    xxl: '4rem',
   },
 };
 
