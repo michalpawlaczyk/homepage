@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import theme from '../../../Theme/mainTheme';
+import theme from 'Theme/mainTheme';
 
 const Heading = styled.h2`
-  font-size: ${theme.font.m};
+  font-size: ${({ small }) => (small ? theme.font.s : theme.font.m)};
   font-weight: 300;
   text-align: center;
   padding-top: 0.6em;
@@ -21,11 +21,11 @@ const Heading = styled.h2`
     `}
 
   @media (min-width: ${theme.small}) {
-    font-size: ${theme.font.l};
+    font-size: ${({ small }) => (small ? theme.font.l : theme.font.xl)};
+    text-align: left;
   }
   @media (min-width: ${theme.large}) {
-    font-size: ${theme.font.xl};
-    text-align: left;
+    font-size: ${({ small }) => (small ? theme.font.xl : theme.font.xxl)};
     margin: 0 0 0.3em 0.7em;
   }
 `;
