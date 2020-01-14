@@ -24,14 +24,23 @@ storiesOf('Skills View', module).add('Skills View', () => (
       listData={[
         {
           list: {
-            listTitle: 'Working knowlage',
+            listTitle: 'Know something about',
             listItems: [
-              { value: 'HTML5' },
-              { value: 'CSS' },
-              { value: 'Figma' },
-              { value: 'JavaScript' },
-              { value: 'GIT' },
+              { value: 'Progressive web apps' },
+              { value: 'NPM' },
+              { value: 'Gulp' },
+              { value: 'React JS' },
             ],
+          },
+        },
+      ]}
+    />
+    <SkillsView
+      listData={[
+        {
+          list: {
+            listTitle: 'Want to learn',
+            listItems: [{ value: 'React native' }, { value: 'Node.js' }],
           },
         },
       ]}
