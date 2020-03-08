@@ -7,7 +7,7 @@ import GitHubProjectCard from 'components/molecules/GitHubProjectCard/GitHubProj
 import Heading from 'components/atoms/Heading/Heading';
 import theme from 'Theme/mainTheme';
 
-ScrollMagicPluginGsap(ScrollMagic, gsap);
+// ScrollMagicPluginGsap(ScrollMagic, gsap);
 
 const StyledProjectsWrapper = styled.section`
   display: grid;
@@ -32,28 +32,21 @@ const ProjectsView = ({ data }) => {
     const sectionWrapperAnimation = gsap
       .fromTo(sectionWrapper.current, { y: '+=200' }, { duration: 0.6, y: '-=200', autoAlpha: 1 })
       .pause();
-
     const cardAnimation = gsap
       .fromTo(cardRef.current, { scale: 0.7 }, { duration: 0.6, autoAlpha: 1, scale: 1 })
       .pause();
-
-    new ScrollMagic.Scene({
-      triggerElement: sectionWrapper.current,
-      triggerHook: 0.7,
-    })
-      .on('enter', function() {
-        sectionWrapperAnimation.play();
-      })
-      .on('leave', function() {
-        sectionWrapperAnimation.reverse();
-      })
-      .on('enter', function() {
-        cardAnimation.play();
-      })
-      .on('leave', function() {
-        cardAnimation.reverse();
-      })
-      .addTo(new ScrollMagic.Controller());
+    const observer = new IntersectionObserver(
+      entry => {
+        if (entry[0].intersectionRatio > 0.3) {
+          sectionWrapperAnimation.play();
+          cardAnimation.play();
+        }
+      },
+      {
+        threshold: 0.3,
+      },
+    );
+    observer.observe(sectionWrapper.current);
   });
 
   return (
