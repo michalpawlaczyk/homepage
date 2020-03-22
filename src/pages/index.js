@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import GlobalStyle from 'Theme/GlobalStyle';
 import MainView from 'components/organisms/MainView/MainView';
-import image from 'static/webdev3.svg';
 import SkillsView from 'components/organisms/SkillsView/SkillsView';
 import ContactView from 'components/organisms/ContactView/ContactView';
 import ProjectsView from 'components/organisms/ProjectsView/ProjectsView';
@@ -12,9 +11,14 @@ export default ({ data }) => {
     <main>
       <GlobalStyle />
       <MainView
-        title={`Hey there! 👋 I’m Michał and I’m aspiring to frontend developer`}
-        image={image}
-        imageAlt={'Web developer.'}
+        heading={
+          <>
+            Hello 👋,
+            <br /> my name is Michał
+          </>
+        }
+        paragraph="I'm aspiring to frontend developer. I really like frontend and mobile development. Outside
+          of programming I'm intrested in simracing and cars"
       />
       <SkillsView
         mainTitle="Skills"
