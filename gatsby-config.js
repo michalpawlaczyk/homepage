@@ -19,7 +19,7 @@ module.exports = {
         // URL to query from
         url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `Bearer a0921bde6a8a1b0febc299d08bb5a3ea912b3acd`,
+          Authorization: `Bearer 55fc457840bbde4196945e670ef6f481b48930a7`,
         },
       },
     },

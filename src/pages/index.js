@@ -1,37 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import GlobalStyle from 'Theme/GlobalStyle';
-import theme from 'Theme/mainTheme';
 import MainView from 'components/organisms/MainView/MainView';
-import image from 'static/webdev3.svg';
 import SkillsView from 'components/organisms/SkillsView/SkillsView';
 import ContactView from 'components/organisms/ContactView/ContactView';
-import GitHubProjectCard from 'components/molecules/GitHubProjectCard/GitHubProjectCard';
-import Heading from 'components/atoms/Heading/Heading';
-
-const StyledProjectsWrapper = styled.section`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin: 4vh;
-  grid-gap: 30px;
-  justify-items: center;
-  @media (min-width: ${theme.medium}) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: ${theme.large}) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
+import ProjectsView from 'components/organisms/ProjectsView/ProjectsView';
 
 export default ({ data }) => {
   return (
     <main>
       <GlobalStyle />
       <MainView
-        title={`Hey there! 👋 I’m Michał and I’m aspiring to frontend developer`}
-        image={image}
-        imageAlt={'Web developer.'}
+        heading={
+          <>
+            Hello 👋,
+            <br /> my name is Michał
+          </>
+        }
+        paragraph="I'm aspiring to frontend developer. I really like frontend and mobile development. Outside
+          of programming I'm intrested in simracing and cars"
       />
       <SkillsView
         mainTitle="Skills"
@@ -75,28 +62,7 @@ export default ({ data }) => {
           },
         ]}
       />
-      <Heading as="h2" topLine>
-        Projects
-      </Heading>
-      <StyledProjectsWrapper>
-        {data ? (
-          data.github.repositoryOwner.repositories.nodes.map(element => (
-            <GitHubProjectCard
-              key={element.name}
-              name={element.name}
-              description={element.description}
-              sourceUrl={element.url}
-            />
-          ))
-        ) : (
-          <p>
-            Something goes wrong
-            <span role="img" aria-label="scary">
-              😨
-            </span>
-          </p>
-        )}
-      </StyledProjectsWrapper>
+      <ProjectsView data={data} />
       <ContactView
         title="Contact me 😄"
         paragraph="I’m open for new opportunities. If you have one for me we should talk!"
