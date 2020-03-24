@@ -5,6 +5,9 @@
  */
 
 const path = require('path');
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
   plugins: [
@@ -19,7 +22,7 @@ module.exports = {
         // URL to query from
         url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `Bearer 55fc457840bbde4196945e670ef6f481b48930a7`,
+          Authorization: `Bearer ${process.env.GATSBY_API_KEY}`,
         },
       },
     },
