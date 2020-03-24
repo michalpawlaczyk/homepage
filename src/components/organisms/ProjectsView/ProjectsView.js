@@ -1,27 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import styled from 'styled-components';
 import gsap from 'gsap';
-import ScrollMagic from 'scrollmagic';
-import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import GitHubProjectCard from 'components/molecules/GitHubProjectCard/GitHubProjectCard';
 import Heading from 'components/atoms/Heading/Heading';
-import theme from 'Theme/mainTheme';
-
-// ScrollMagicPluginGsap(ScrollMagic, gsap);
-
-const StyledProjectsWrapper = styled.section`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin: 4vh;
-  grid-gap: 30px;
-  justify-items: center;
-  @media (min-width: ${theme.medium}) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: ${theme.large}) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
+import Slider from 'components/molecules/Slider/Slider';
 
 const ProjectsView = ({ data }) => {
   const sectionWrapper = useRef(null);
@@ -54,7 +35,7 @@ const ProjectsView = ({ data }) => {
       <Heading as="h2" topLine>
         Projects
       </Heading>
-      <StyledProjectsWrapper ref={cardRef}>
+      <Slider ref={cardRef} observeElement={sectionWrapper}>
         {data ? (
           data.github.repositoryOwner.repositories.nodes.map(element => (
             <GitHubProjectCard
@@ -72,7 +53,7 @@ const ProjectsView = ({ data }) => {
             </span>
           </p>
         )}
-      </StyledProjectsWrapper>
+      </Slider>
     </section>
   );
 };
