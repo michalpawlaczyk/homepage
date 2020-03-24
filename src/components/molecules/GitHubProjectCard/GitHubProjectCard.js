@@ -8,6 +8,7 @@ import DemoIcon from 'static/DemoIcon.svg';
 
 const StyledWrapper = styled.div`
   width: 90%;
+  min-width: 350px;
   max-width: 380px;
   min-height: 500px;
   box-shadow: 0px 6px 16px rgba(24, 41, 67, 0.09);
@@ -15,6 +16,7 @@ const StyledWrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   position: relative;
+  margin: 0 30px;
 `;
 const StyledHeading = styled.h4`
   font-size: ${theme.font.m};
@@ -59,6 +61,7 @@ const StyledButton = styled.a`
   text-align: center;
   color: #000000;
   position: relative;
+  cursor: pointer;
 
   ::before {
     content: '';
