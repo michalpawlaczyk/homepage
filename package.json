@@ -16,7 +16,7 @@
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.22.17",
     "gatsby-plugin-react-helmet": "^3.3.3",
     "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-source-github-api": "^0.1.4",
