@@ -6,7 +6,7 @@ import List from 'components/atoms/List/List.js';
 import theme from 'Theme/mainTheme';
 
 const StyledListWrapper = styled.div`
-  margin: 0 2rem;
+  margin: 0 6rem;
   display: grid;
   grid-template-columns: 1fr;
   @media (min-width: ${theme.medium}) {
@@ -14,7 +14,7 @@ const StyledListWrapper = styled.div`
   }
 `;
 
-const SkillsView = ({ mainTitle, listData }) => {
+const SkillsView = ({ mainTitle, title, items }) => {
   const sectionRef = useRef(null);
   const listHeadingRef = useRef(null);
 
@@ -49,14 +49,12 @@ const SkillsView = ({ mainTitle, listData }) => {
   return (
     <section ref={sectionRef}>
       {mainTitle && <Heading topLine>{mainTitle}</Heading>}
-      {listData.map((item, index) => (
-        <StyledListWrapper key={index}>
-          <Heading small as="h3" ref={listHeadingRef}>
-            {item.list.listTitle}
-          </Heading>
-          <List items={item.list.listItems} animation={event} />
-        </StyledListWrapper>
-      ))}
+      <StyledListWrapper>
+        <Heading small as="h3" ref={listHeadingRef}>
+          {title}
+        </Heading>
+        <List items={items} animation={event} />
+      </StyledListWrapper>
     </section>
   );
 };

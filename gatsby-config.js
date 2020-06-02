@@ -35,5 +35,6 @@ module.exports = {
         static: path.join(__dirname, 'src/static'),
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 };

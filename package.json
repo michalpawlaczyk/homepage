@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "homepage",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Project of my portfolio",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "gatsby": "^2.19.12",
+    "gatsby-plugin-react-helmet": "^3.3.3",
     "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-source-github-api": "^0.1.4",
     "gatsby-source-graphql": "^2.1.33",
@@ -24,6 +25,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-gsap": "^1.2.0",
+    "react-helmet": "^6.0.0",
     "react-scrollmagic": "^2.1.1",
     "react-use": "^13.27.0",
     "scrollmagic": "^2.0.7",
