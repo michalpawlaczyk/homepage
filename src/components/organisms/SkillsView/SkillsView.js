@@ -53,7 +53,7 @@ const SkillsView = ({ mainTitle, title, items }) => {
         <Heading small as="h3" ref={listHeadingRef}>
           {title}
         </Heading>
-        <List items={items} animation={event} />
+        <List items={items} />
       </StyledListWrapper>
     </section>
   );
