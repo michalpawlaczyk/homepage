@@ -68,7 +68,7 @@ const StyledButton = styled.a`
     background: url(${({ githubIcon }) => (githubIcon ? CodeIcon : DemoIcon)});
     background-repeat: no-repeat;
     display: block;
-    height: 130%;
+    height: 135%;
     width: 100%;
     position: absolute;
     top: -25%;
@@ -76,7 +76,7 @@ const StyledButton = styled.a`
   }
 `;
 
-const GitHubProjectCard = ({ name, description, sourceUrl, demoUrl }) => (
+const GitHubProjectCard = ({ name, description, sourceUrl, demoUrl = '' }) => (
   <StyledWrapper>
     <StyledLogo src={GitHubLogo} alt="github logo." />
     <div>
@@ -84,8 +84,12 @@ const GitHubProjectCard = ({ name, description, sourceUrl, demoUrl }) => (
       <StyledParagraph>{description}</StyledParagraph>
     </div>
     <StyledButtonsWrapper>
-      <StyledButton href={demoUrl}>Demo</StyledButton>
-      <StyledButton href={sourceUrl} githubIcon>
+      {demoUrl !== '' && (
+        <StyledButton href={demoUrl} target="_blank">
+          Demo
+        </StyledButton>
+      )}
+      <StyledButton href={sourceUrl} target="_blank" githubIcon>
         Github
       </StyledButton>
     </StyledButtonsWrapper>

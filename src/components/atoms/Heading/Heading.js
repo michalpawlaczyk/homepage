@@ -6,7 +6,6 @@ const Heading = styled.h2`
   font-weight: 300;
   text-align: center;
   padding-top: 0.6em;
-
   ${({ topLine }) =>
     topLine &&
     css`
@@ -23,6 +22,7 @@ const Heading = styled.h2`
   @media (min-width: ${theme.small}) {
     font-size: ${({ small }) => (small ? theme.font.l : theme.font.xl)};
     text-align: left;
+    margin: 0 0 0.3em 0.7em;
   }
   @media (min-width: ${theme.large}) {
     font-size: ${({ small }) => (small ? theme.font.xl : theme.font.xxl)};

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import GlobalStyle from 'Theme/GlobalStyle';
 import MainView from 'components/organisms/MainView/MainView';
@@ -9,6 +10,10 @@ import ProjectsView from 'components/organisms/ProjectsView/ProjectsView';
 export default ({ data }) => {
   return (
     <main>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Michal Pawlaczyk Homepage</title>
+      </Helmet>
       <GlobalStyle />
       <MainView
         heading={
@@ -22,53 +27,27 @@ export default ({ data }) => {
       />
       <SkillsView
         mainTitle="Skills"
-        listData={[
-          {
-            list: {
-              listTitle: 'Working knowlage',
-              listItems: [
-                { value: 'HTML5' },
-                { value: 'CSS' },
-                { value: 'Figma' },
-                { value: 'JavaScript' },
-                { value: 'GIT' },
-              ],
-            },
-          },
+        title="Working knowlage"
+        items={[
+          { value: 'HTML5' },
+          { value: 'CSS' },
+          { value: 'React' },
+          { value: 'JavaScript' },
+          { value: 'GIT' },
         ]}
       />
       <SkillsView
-        listData={[
-          {
-            list: {
-              listTitle: 'Know something about',
-              listItems: [
-                { value: 'Progressive web apps' },
-                { value: 'NPM' },
-                { value: 'Gulp' },
-                { value: 'React JS' },
-              ],
-            },
-          },
-        ]}
+        title="Know something about"
+        items={[{ value: 'TypeScript' }, { value: 'Figma' }, { value: 'Gatsby' }]}
       />
-      <SkillsView
-        listData={[
-          {
-            list: {
-              listTitle: 'Want to learn',
-              listItems: [{ value: 'React native' }, { value: 'Node.js' }],
-            },
-          },
-        ]}
-      />
+      <SkillsView title="Want to learn" items={[{ value: 'React native' }, { value: 'Node.js' }]} />
       <ProjectsView data={data} />
       <ContactView
         title="Contact me 😄"
         paragraph="I’m open for new opportunities. If you have one for me we should talk!"
-        linkedInLink="https://pl.linkedin.com/"
+        linkedInLink="https://www.linkedin.com/in/michal-pawlaczyk/"
         githubLink="https://github.com/michalpawlaczyk"
-        email="michallpawlaczyk@gmail.com"
+        email="michal.pawlaczyk@outlook.com"
       />
     </main>
   );
