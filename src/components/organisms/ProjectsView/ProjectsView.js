@@ -37,14 +37,17 @@ const ProjectsView = ({ data }) => {
       </Heading>
       <Slider ref={cardRef} observeElement={sectionWrapper}>
         {data ? (
-          data.github.repositoryOwner.repositories.nodes.map(element => (
-            <GitHubProjectCard
-              key={element.name}
-              name={element.name}
-              description={element.description}
-              sourceUrl={element.url}
-            />
-          ))
+          data.github.repositoryOwner.repositories.nodes.map(
+            ({ name, description, url, projectsUrl }) => (
+              <GitHubProjectCard
+                key={name}
+                name={name}
+                description={description}
+                sourceUrl={url}
+                demoUrl={projectsUrl}
+              />
+            ),
+          )
         ) : (
           <p>
             Something goes wrong

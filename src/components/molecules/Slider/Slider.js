@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, forwardRef } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 import arrow from 'static/arrow.svg';
@@ -35,15 +35,15 @@ const StyledSlideButton = styled.button`
     right ? 'transform: translateY(-50%) rotate(180deg)' : 'transform: translateY(-50%)'};
 `;
 
-const Slider = ({ children, observeElement }) => {
+const Slider = forwardRef(({ children, observeElement, ...others }, ref) => {
   const projectsWrapperRef = useRef(null);
+
   const [isSlideLeftAvailable, setIsSlideLeftAvailable] = useState(false);
   const [isSlideRightAvailable, setIsSlideRightAvailable] = useState(false);
-  const [isAnimationPlayed, setIsAnimationPlayed] = useState(false);
 
   const handleIsSlideAvailable = () => {
     projectsWrapperRef.current.scrollLeft + projectsWrapperRef.current.offsetWidth >=
-    projectsWrapperRef.current.scrollWidth
+    projectsWrapperRef.current.scrollWidth - 10
       ? setIsSlideRightAvailable(false)
       : setIsSlideRightAvailable(true);
     projectsWrapperRef.current.scrollLeft === 0
@@ -59,39 +59,17 @@ const Slider = ({ children, observeElement }) => {
 
   useEffect(() => {
     handleIsSlideAvailable();
-    if (!!observeElement && !isAnimationPlayed) {
-      setIsAnimationPlayed(true);
-      gsap.set(projectsWrapperRef.current, { autoAlpha: 0 });
-      const cardAnimation = gsap
-        .fromTo(
-          projectsWrapperRef.current,
-          { scale: 0.7 },
-          { duration: 0.6, autoAlpha: 1, scale: 1 },
-        )
-        .pause();
-      const observer = new IntersectionObserver(
-        entry => {
-          if (entry[0].intersectionRatio > 0.3) {
-            cardAnimation.play();
-          }
-        },
-        {
-          threshold: 0.3,
-        },
-      );
-      observer.observe(observeElement.current);
-    }
-  });
+  }, []);
 
   return (
-    <StyledSlider>
+    <StyledSlider ref={ref} {...others}>
       <StyledSlideButton onClick={handleSlideToRight} right isVisible={isSlideRightAvailable} />
       <StyledSlideButton onClick={handleSlideToLeft} isVisible={isSlideLeftAvailable} />
-      <StyledProjectsWrapper ref={projectsWrapperRef} onScroll={handleIsSlideAvailable}>
+      <StyledProjectsWrapper onScroll={handleIsSlideAvailable} ref={projectsWrapperRef}>
         {children}
       </StyledProjectsWrapper>
     </StyledSlider>
   );
-};
+});
 
 export default Slider;
