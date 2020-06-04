@@ -2,7 +2,7 @@ const theme = {
   huge: '1440px',
   large: '1170px',
   medium: '780px',
-  small: '450px',
+  small: '490px',
   font: {
     xs: '1.4rem',
     s: '1.8rem',
