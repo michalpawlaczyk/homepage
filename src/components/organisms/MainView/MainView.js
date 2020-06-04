@@ -83,7 +83,7 @@ const MainView = ({ heading, paragraph }) => {
         <StyledHeading>{heading}</StyledHeading>
         <StyledParagraph>{paragraph}</StyledParagraph>
       </StyledTextWrapper>
-      <StyledImage src={background} ref={backgroundRef} />
+      <StyledImage src={background} ref={backgroundRef} alt="background image" />
     </StyledSection>
   );
 };

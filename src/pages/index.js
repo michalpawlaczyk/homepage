@@ -10,9 +10,10 @@ import ProjectsView from 'components/organisms/ProjectsView/ProjectsView';
 export default ({ data }) => {
   return (
     <main>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <meta charSet="utf-8" />
         <title>Michal Pawlaczyk Homepage</title>
+        <meta name="description" content="Michal Pawlaczyk Homepage" />
       </Helmet>
       <GlobalStyle />
       <MainView
