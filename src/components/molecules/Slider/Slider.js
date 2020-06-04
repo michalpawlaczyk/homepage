@@ -1,15 +1,14 @@
 import React, { useRef, useEffect, useState, forwardRef } from 'react';
 import styled from 'styled-components';
-import gsap from 'gsap';
 import arrow from 'static/arrow.svg';
 
 const StyledProjectsWrapper = styled.section`
-  max-height: 520px;
   display: flex;
   flex-direction: row;
   margin: 4vh;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -33,9 +32,13 @@ const StyledSlideButton = styled.button`
   overflow: hidden;
   ${({ right }) =>
     right ? 'transform: translateY(-50%) rotate(180deg)' : 'transform: translateY(-50%)'};
+
+  & > span {
+    opacity: 0;
+  }
 `;
 
-const Slider = forwardRef(({ children, observeElement, ...others }, ref) => {
+const Slider = forwardRef(({ children, ...others }, ref) => {
   const projectsWrapperRef = useRef(null);
 
   const [isSlideLeftAvailable, setIsSlideLeftAvailable] = useState(false);
@@ -63,8 +66,12 @@ const Slider = forwardRef(({ children, observeElement, ...others }, ref) => {
 
   return (
     <StyledSlider ref={ref} {...others}>
-      <StyledSlideButton onClick={handleSlideToRight} right isVisible={isSlideRightAvailable} />
-      <StyledSlideButton onClick={handleSlideToLeft} isVisible={isSlideLeftAvailable} />
+      <StyledSlideButton onClick={handleSlideToRight} right isVisible={isSlideRightAvailable}>
+        <span>Next</span>
+      </StyledSlideButton>
+      <StyledSlideButton onClick={handleSlideToLeft} isVisible={isSlideLeftAvailable}>
+        <span>Previous</span>
+      </StyledSlideButton>
       <StyledProjectsWrapper onScroll={handleIsSlideAvailable} ref={projectsWrapperRef}>
         {children}
       </StyledProjectsWrapper>

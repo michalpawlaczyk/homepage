@@ -14,13 +14,17 @@ const ProjectsView = ({ data }) => {
       .fromTo(sectionWrapper.current, { y: '+=200' }, { duration: 0.6, y: '-=200', autoAlpha: 1 })
       .pause();
     const cardAnimation = gsap
-      .fromTo(cardRef.current, { scale: 0.7 }, { duration: 0.6, autoAlpha: 1, scale: 1 })
+      .fromTo(
+        cardRef.current,
+        { x: '+=300' },
+        { duration: 0.6, x: '-=300', autoAlpha: 1, delay: 0.5 },
+      )
       .pause();
     const observer = new IntersectionObserver(
       entry => {
         if (entry[0].intersectionRatio > 0.3) {
-          sectionWrapperAnimation.play();
           cardAnimation.play();
+          sectionWrapperAnimation.play();
         }
       },
       {
@@ -35,7 +39,7 @@ const ProjectsView = ({ data }) => {
       <Heading as="h2" topLine>
         Projects
       </Heading>
-      <Slider ref={cardRef} observeElement={sectionWrapper}>
+      <Slider ref={cardRef}>
         {data ? (
           data.github.repositoryOwner.repositories.nodes.map(
             ({ name, description, url, projectsUrl }) => (

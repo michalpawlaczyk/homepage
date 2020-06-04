@@ -7,22 +7,23 @@ import CodeIcon from 'static/CodeIcon.svg';
 import DemoIcon from 'static/DemoIcon.svg';
 
 const StyledWrapper = styled.div`
-  width: 90%;
-  min-width: 350px;
-  max-width: 380px;
+  width: 360px;
+  min-width: 360px;
   min-height: 500px;
-  box-shadow: 0px 6px 16px rgba(24, 41, 67, 0.09);
-  border-radius: 8px;
+  position: relative;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  position: relative;
+  padding: 20px;
   margin: 0 30px;
+  box-shadow: 0px 6px 16px rgba(24, 41, 67, 0.09);
+  border-radius: 8px;
 `;
 const StyledHeading = styled.h4`
+  overflow-wrap: break-word;
+  max-width: 320px;
   font-size: ${theme.font.m};
   text-align: left;
   font-weight: 300;
-  padding-left: 20px;
   margin: 20px 0 30px;
   @media (min-width: ${theme.large}) {
     font-size: ${theme.font.l};
@@ -35,7 +36,6 @@ const StyledLogo = styled.img`
 `;
 
 const StyledParagraph = styled(Paragraph)`
-  padding-left: 20px;
   margin: 0;
   @media (min-width: ${theme.small}) {
     margin: 0;
@@ -54,25 +54,27 @@ const StyledButtonsWrapper = styled.div`
 `;
 
 const StyledButton = styled.a`
-  text-decoration: none;
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
+  text-decoration: none;
   text-align: center;
   color: #000000;
-  position: relative;
   cursor: pointer;
 
-  ::before {
-    content: '';
-    background: url(${({ githubIcon }) => (githubIcon ? CodeIcon : DemoIcon)});
-    background-repeat: no-repeat;
-    display: block;
-    height: 135%;
-    width: 100%;
-    position: absolute;
-    top: -25%;
-    left: 15%;
+  & > span {
+    position: relative;
+    ::before {
+      content: '';
+      background: url(${({ githubIcon }) => (githubIcon ? CodeIcon : DemoIcon)});
+      background-repeat: no-repeat;
+      display: block;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: -25%;
+      left: -40px;
+    }
   }
 `;
 
@@ -85,12 +87,12 @@ const GitHubProjectCard = ({ name, description, sourceUrl, demoUrl = '' }) => (
     </div>
     <StyledButtonsWrapper>
       {demoUrl !== '' && (
-        <StyledButton href={demoUrl} target="_blank">
-          Demo
+        <StyledButton href={demoUrl} rel="noopener noreferrer" target="_blank">
+          <span>Demo</span>
         </StyledButton>
       )}
-      <StyledButton href={sourceUrl} target="_blank" githubIcon>
-        Github
+      <StyledButton href={sourceUrl} rel="noopener noreferrer" target="_blank" githubIcon>
+        <span>Github</span>
       </StyledButton>
     </StyledButtonsWrapper>
   </StyledWrapper>
