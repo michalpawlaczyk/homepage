@@ -9,6 +9,8 @@ const StyledListWrapper = styled.div`
   margin: 0 6rem;
   display: grid;
   grid-template-columns: 1fr;
+  overflow: hidden;
+
   @media (min-width: ${theme.medium}) {
     grid-template-columns: 1fr 1fr;
   }

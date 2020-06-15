@@ -39,25 +39,22 @@ const StyledSlideButton = styled.button`
 `;
 
 const Slider = forwardRef(({ children, ...others }, ref) => {
-  const projectsWrapperRef = useRef(null);
+  // const projectsWrapperRef = ref;
 
   const [isSlideLeftAvailable, setIsSlideLeftAvailable] = useState(false);
   const [isSlideRightAvailable, setIsSlideRightAvailable] = useState(false);
 
   const handleIsSlideAvailable = () => {
-    projectsWrapperRef.current.scrollLeft + projectsWrapperRef.current.offsetWidth >=
-    projectsWrapperRef.current.scrollWidth - 10
+    ref.current.scrollLeft + ref.current.offsetWidth >= ref.current.scrollWidth - 10
       ? setIsSlideRightAvailable(false)
       : setIsSlideRightAvailable(true);
-    projectsWrapperRef.current.scrollLeft === 0
-      ? setIsSlideLeftAvailable(false)
-      : setIsSlideLeftAvailable(true);
+    ref.current.scrollLeft === 0 ? setIsSlideLeftAvailable(false) : setIsSlideLeftAvailable(true);
   };
   const handleSlideToRight = () => {
-    projectsWrapperRef.current.scrollLeft += projectsWrapperRef.current.offsetWidth;
+    ref.current.scrollLeft += ref.current.offsetWidth;
   };
   const handleSlideToLeft = () => {
-    projectsWrapperRef.current.scrollLeft -= projectsWrapperRef.current.offsetWidth;
+    ref.current.scrollLeft -= ref.current.offsetWidth;
   };
 
   useEffect(() => {
@@ -65,18 +62,19 @@ const Slider = forwardRef(({ children, ...others }, ref) => {
   }, []);
 
   return (
-    <StyledSlider ref={ref} {...others}>
+    <StyledSlider {...others}>
       <StyledSlideButton onClick={handleSlideToRight} right isVisible={isSlideRightAvailable}>
         <span>Next</span>
       </StyledSlideButton>
       <StyledSlideButton onClick={handleSlideToLeft} isVisible={isSlideLeftAvailable}>
         <span>Previous</span>
       </StyledSlideButton>
-      <StyledProjectsWrapper onScroll={handleIsSlideAvailable} ref={projectsWrapperRef}>
+      <StyledProjectsWrapper onScroll={handleIsSlideAvailable} ref={ref}>
         {children}
       </StyledProjectsWrapper>
     </StyledSlider>
   );
 });
+// ref = { projectsWrapperRef }
 
 export default Slider;
